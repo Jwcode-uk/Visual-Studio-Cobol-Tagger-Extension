@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+  <Include href="KnownImageIds.vsct"/>
+  <Include href="VSGlobals.vsct"/>
+
+  <Commands package="InsertTag">
+    <Groups>
+      <Group guid="InsertTag" id="MyMenuGroup" priority="0x0600">
+        <Parent guid="VSMainMenu" id="Edit"/>
+      </Group>
+		<Group guid="GetTag" id="MyMenuGroup" priority="0x0600">
+			<Parent guid="VSMainMenu" id="Edit"/>
+		</Group>
+		<Group guid="InsertCommentedTag" id="MyMenuGroup" priority="0x0600">
+			<Parent guid="VSMainMenu" id="Edit"/>
+		</Group>
+    </Groups>
+
+    <!--This section defines the elements the user can interact with, like a menu command or a button
+        or combo box in a toolbar. -->
+    <Buttons>
+      <Button guid="InsertTag" id="InsertTagCmd" priority="0x0100" type="Button">
+        <Parent guid="InsertTag" id="MyMenuGroup" />
+        <Icon guid="ImageCatalogGuid" id="PasteAppend" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Insert Tag</ButtonText>
+          <LocCanonicalName>.Edit.InsertTag</LocCanonicalName>
+        </Strings>
+      </Button>
+      <Button guid="GetTag" id="GetTagCmd" priority="0x0102" type="Button">
+		<Parent guid="GetTag" id="MyMenuGroup" />
+		<Icon guid="ImageCatalogGuid" id="PasteAppend" />
+		<CommandFlag>IconIsMoniker</CommandFlag>
+		<Strings>
+			<ButtonText>Get Tag</ButtonText>
+			<LocCanonicalName>.Edit.GetTag</LocCanonicalName>
+		</Strings>
+      </Button>
+		<Button guid="InsertTag" id="InsertCommentedTagCmd" priority="0x0101" type="Button">
+			<Parent guid="InsertTag" id="MyMenuGroup" />
+			<Icon guid="ImageCatalogGuid" id="PasteAppend" />
+			<CommandFlag>IconIsMoniker</CommandFlag>
+			<Strings>
+				<ButtonText>Insert Commented Tag</ButtonText>
+				<LocCanonicalName>.Edit.GetTag</LocCanonicalName>
+			</Strings>
+		</Button>
+    </Buttons>
+
+  </Commands>
+
+	<KeyBindings>
+		<KeyBinding guid="InsertTag" id="InsertTagCmd" editor="guidSourceCodeTextEditor" mod1="Control" key1="1" />
+		<KeyBinding guid="InsertTag" id="InsertCommentedTagCmd" editor="guidSourceCodeTextEditor" mod1="Control" key1="2" />
+		<KeyBinding guid="InsertTag" id="GetTagCmd" editor="guidSourceCodeTextEditor" mod1="Control" key1="3" /> 
+	</KeyBindings>
+
+  <Symbols>
+	<GuidSymbol name ="guidSourceCodeTextEditor" value="{8b382828-6202-11d1-8870-0000f87579d2}" />
+	<GuidSymbol name="InsertTag" value="{88419a58-a1cb-4cca-ba77-92c68372bc3e}">
+		<IDSymbol name="MyMenuGroup" value="0x0001" />
+		<IDSymbol name="InsertTagCmd" value="0x0100" />
+		<IDSymbol name="InsertCommentedTagCmd" value="0x0101" />
+	</GuidSymbol>
+	<GuidSymbol name="InsertCommentedTag" value="{88419a58-a1cb-4cca-ba77-92c68372bc3e}">
+		<IDSymbol name="MyMenuGroup" value="0x0001" />
+	</GuidSymbol>
+	<GuidSymbol name="GetTag" value="{88419a58-a1cb-4cca-ba77-92c68372bc3e}">
+		<IDSymbol name="MyMenuGroup" value="0x0001" />
+		<IDSymbol name="GetTagCmd" value="0x0102" />
+	</GuidSymbol>
+  </Symbols>
+
+</CommandTable>
