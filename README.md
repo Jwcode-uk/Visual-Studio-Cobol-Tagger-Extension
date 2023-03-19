@@ -1,4 +1,4 @@
-# COBOL Tag Lines VSIX Extension 🏷️💻
+# COBOL Tagger Extension for VS 🏷️💻
 
 This VSIX extension for Visual Studio Code makes it easy to add and manage tags in your COBOL code! Use custom tags to mark your tickets and relate them to your work with just a few keyboard shortcuts.
 
